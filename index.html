@@ -1,15 +1,42 @@
-!<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <title>Code Quiz</title>
+        <meta name="description" content="">
+        <link rel="stylesheet" href="./assets/css/reset.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
     </head>
-    <body>
-        
-        <script src="" async defer></script>
+    <body class="container">
+        <header> 
+        <h1>Quiz Challenge</h1>
+            <nav class="navbar">
+                <ul>
+                    <button><a href="#" id="highscore">View Highscores</button>
+                    <div class="timer">60</div>
+                </ul>
+            </nav>
+        </header>
+        <button id="startButton" onclick="">Start</button>
+        <section>
+            <h3 class="questions"><p>Questioon</p></h3>
+                <button class="button"id="a" onclick="check(a)">A</button>
+                <button class="button"id="b" onclick="check(b)">B</button>
+                <button class="button"id="c" onclick="check(c)">C</button>
+                <button class="button"id="d" onclick="check(d)">D</button>
+            <!--<div class="result"></div>
+                <div id="gameover">
+                <div id="finalScore"></div>
+                <input type="text" size = "40" placeholder="Enter you initials for high score" name="intials" id="initials"/>
+            <button id="submitScore">Submit Score</button>-->
+        </div>
+        </section>
+        <section class="container" id="">
+            <button id="submitButton" onclick="">Submit</button>
+            <button id="return" onclick="">Go Back</button>
+            <!--<button id="highscores" onclick="">Highscores</button>-->
+        </div>
+        <script type="text/javascript" src="./assets/js/script.js"></script>
     </body>
 </html>
