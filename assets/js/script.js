@@ -1,23 +1,9 @@
 //global elements
-// var quizBody = document.getElementById("quiz");
-// var resultsEl = document.getElementById("result");
-// var finalScoreEl = document.getElementById("finalScore");
-// var gameoverDiv = document.getElementById("gameover");
-// var questionsEl = document.getElementById("questions");
-// var timerEl = document.getElementById("timer");
-// var startQuizButton = document.getElementById("startButton");
-// var startQuizDiv = document.getElementById("startpage");
-// var highscoreContainer = document.getElementById("highscoreContainer");
-// var highscoreDiv = document.getElementById("high-scorePage");
-// var highscoreInputName = document.getElementById("initials");
-// var highscoreDisplayName = document.getElementById("highscore-initials");
-// var endGameBtns = document.getElementById("endGameBtns");
-// var submitScoreBtn = document.getElementById("submitScore");
-// var highscoreDisplayScore = document.getElementById("highscore-score");
-// var buttonA = document.getElementById("a");
-// var buttonB = document.getElementById("b");
-// var buttonC = document.getElementById("c");
-// var buttonD = document.getElementById("d");
+var questionsEl = document.getElementById("questions");
+var buttonA = document.getElementById("a");
+var buttonB = document.getElementById("b");
+var buttonC = document.getElementById("c");
+var buttonD = document.getElementById("d");
 
 //create the questions for the quiz
 var questions = [{
@@ -53,6 +39,10 @@ var questions = [{
         time: 0
     }
 ];
+var timeleft;
+var timeLeft;
+var numcorrect;
+var score;
 
 function createQuestion() {
     var time
@@ -83,17 +73,10 @@ function createQuestion() {
         }, 1000);
     }
 
-    function question(total, content) {
-        for (var i = 0; i < total; i++) {
-            var rowEl = document.createElement("div");
-            rowEl.setAttribute("class", "row")
-            var columnEl = document.createElement("div");
-            columnEl.setAttribute("class", "center");
-            columnEl.appendChild(content);
-            rowEl.appendChild(columnEl);
-            container.appendChild(rowEl);
-        }
-    }
+    function questionEl() {}
+
+    function score() {}
 }
+
 beginQuiz.addEventListener("click", start);
 //beginQuiz();
