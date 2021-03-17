@@ -43,40 +43,47 @@ var timeleft;
 var timeLeft;
 var numcorrect;
 var score;
+var currentQuestion = 0;
 
 function createQuestion() {
-    var time
-
-    function beginQuiz() {
-        // var time = 0
-        // var displayTime = document.getElementById(Timer);
-
-        // function startQuiz() {
-        //     startButton
-        // }
-    }
-
-    function Timer() {
-        var timeLeft = 90;
-        var timeInterval = setInterval(function() {
-            if (timeLeft > 1) {
-                timerEl.textContent = timeLeft + ' seconds remaining';
-                timeLeft--;
-            } else if (timeLeft === 1) {
-                timerEl.textContent = timeLeft + ' second remaining';
-                timeLeft--;
-            } else {
-                timerEl.textContent = '';
-                clearInterval(timeInterval);
-                //displayMessage();
-            }
-        }, 1000);
-    }
-
-    function questionEl() {}
-
-    function score() {}
+    //var time
 }
 
+function beginQuiz() {
+    document.getElementById("startBtn").addEventListener("click", function() {
+        document.getElementById("mainContainer").innerHTML = "";
+        currentQuestion = 0;
+        questionEl();
+        countDownFunc();
+    });
+    document.getElementById("highScores").addEventListener("click", function() {
+        handleHighscore();
+    })
+    createQuestion();
+}
+
+function startBtn() {}
+startBtn();
+
+function Timer() {
+    var timeLeft = 90;
+    var timeInterval = setInterval(function() {
+        if (timeLeft > 1) {
+            timerEl.textContent = timeLeft + ' seconds remaining';
+            timeLeft--;
+        } else if (timeLeft === 1) {
+            timerEl.textContent = timeLeft + ' second remaining';
+            timeLeft--;
+        } else {
+            timerEl.textContent = '';
+            clearInterval(timeInterval);
+
+        }
+    }, 1000);
+}
+
+function questionEl() {}
+
+function score() {}
+
 beginQuiz.addEventListener("click", start);
-//beginQuiz();
