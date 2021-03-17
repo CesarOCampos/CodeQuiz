@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Code Quiz</title>
-        <meta name="description" content="">
-        <link rel="stylesheet" href="./assets/css/reset.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Code Quiz Challenge</title>
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
-    <body class="container">
-        <header> 
+    <body>
         <h1>Quiz Challenge</h1>
-            <nav class="navbar">
-                <ul>
-                    <button><a href="#" id="highscore">View Highscores</button>
-                    <div class="timer">60</div>
-                </ul>
-            </nav>
-        </header>
-        <button class="mainBtn"id="startButton" onclick="">Start</button>
-        <section>
-            <h3 class="questions"><p>Questioon</p></h3>
-                <button class="button"id="a" onclick="check(a)">A</button>
-                <button class="button"id="b" onclick="check(b)">B</button>
-                <button class="button"id="c" onclick="check(c)">C</button>
-                <button class="button"id="d" onclick="check(d)">D</button>
-            <!--<div class="result"></div>
-                <div id="gameover">
+        <div class="container">
+            <div id="startpage">
+            <button id="startbtn">Start Code Quiz</button>
+            <button id="startPageHighscore" onclick="showHS()">High Scores</button>
+            </div>
+            <div id="quiz">
+                <div id="timer">Time left: </div>
+                    <div id="questions"><p>Questions Placeholder</p></div>
+                        <button id="a" onclick="check('a')">A</button>
+                        <button id="b" onclick="check('b')">B</button>
+                        <button id="c" onclick="check('c')">C</button>
+                        <button id="d" onclick="check('d')">D</button>
+                    <div id="result"></div>
+            </div>
+            <div id="gameover">
                 <div id="finalScore"></div>
                 <input type="text" size = "40" placeholder="Enter you initials for high score" name="intials" id="initials"/>
-            <button id="submitScore">Submit Score</button>-->
-        </div>
-        </section>
-        <section class="container" id="">
-            <button id="submitButton" onclick="">Submit</button>
-            <button id="return" onclick="">Go Back</button>
-            <!--<button id="highscores" onclick="">Highscores</button>-->
+                <button id="submitScore">Submit Score</button>
+            </div>
+            <div id=highscoreContainer>
+            <div id="high-scorePage">
+                <div id="highscore-header">
+                    <h3>User Initials</h3>
+                    <h3>Score</h3>
+                </div>
+                <div id = "highscore-initials"></div>
+                <div id = "highscore-score"></div>
+            </div>
+            <div id="endGameBtns">
+                <button id="playAgain" onclick="replay()">Play Again</button>
+                <button id="clearHighscore" onclick="clearScore()">Clear Highscores</button>
+            </div>
+            </div>
         </div>
         <script type="text/javascript" src="./assets/js/script.js"></script>
     </body>
