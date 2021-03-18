@@ -4,8 +4,8 @@
 
 li {
     padding-bottom: 3px;
-    color: white;
-    text-shadow: 1.5px 1px 3px black;
+    color: rgba(255, 255, 255, 0.664);
+    text-shadow: 2px 1px 3px black;
     list-style-type: none;
 }
 
@@ -30,13 +30,11 @@ input {
 
 .container {
     width: 80vw;
-    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 70rem;
     margin: 0 auto;
-    border-style: dashed;
     border-radius: 15px;
     border-color: antiquewhite;
 }
@@ -46,18 +44,15 @@ button {
     justify-content: center;
     font-family: sans-serif;
     background-color: #1198ce;
-    border-radius: 10px;
     border: 3px double #cccccc;
     color: #eeeeee;
     text-align: center;
-    font-size: 15px;
     padding: 20px;
-    width: 200px;
     margin-top: 3px;
 }
 
 button:hover {
-    box-shadow: 4px 3px 6px #44bd9f;
+    box-shadow: 3px 2px 5px #44bd9f;
 }
 
 #startpage {
@@ -117,7 +112,7 @@ button:hover {
     font-family: sans-serif;
 }
 
-#highscoreContainer {
+#hsCon {
     height: 100%;
     width: 100%;
     display: none;

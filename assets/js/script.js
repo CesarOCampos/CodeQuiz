@@ -1,13 +1,13 @@
 //global values
-var quizBody = document.getElementById("quiz");
+var EntireQuiz = document.getElementById("quiz");
 var resultsEl = document.getElementById("result");
 var finalScoreEl = document.getElementById("finalScore");
-var gameoverDiv = document.getElementById("gameover");
+var gameOver = document.getElementById("gameover");
 var questionsEl = document.getElementById("questions");
-var quizTimer = document.getElementById("timer");
-var startQuizButton = document.getElementById("startbtn");
+var QTime = document.getElementById("timer");
+var StartQBtn = document.getElementById("startbtn");
 var startquiz = document.getElementById("startpage");
-var highscoreContainer = document.getElementById("highscoreContainer");
+var hsCon = document.getElementById("hsCon");
 var highscoreDiv = document.getElementById("high-scorePage");
 var highscoreInputName = document.getElementById("initials");
 var highscoreDisplayName = document.getElementById("highscore-initials");
@@ -18,7 +18,6 @@ var answerA = document.getElementById("a");
 var answerB = document.getElementById("b");
 var answerC = document.getElementById("c");
 var answerD = document.getElementById("d");
-
 
 // Quiz questions
 var questions = [{
@@ -64,7 +63,7 @@ var correct
 
 //renders questions
 function generateQuizQuestion() {
-    gameoverDiv.style.display = "none";
+    gameOver.style.display = "none";
     while (currentQuestionIndex === finalQuestionIndex) {
         return Score();
     }
@@ -78,25 +77,24 @@ function generateQuizQuestion() {
 
 //starts quiz and renders the question and timer begins counting
 function startQuiz() {
-    gameoverDiv.style.display = "none";
     startquiz.style.display = "none";
     generateQuizQuestion();
 
     timerInterval = setInterval(function() {
         timeRemaining--;
-        quizTimer.textContent = "Time left: " + timeRemaining;
+        QTime.textContent = "Time left: " + timeRemaining;
 
         if (timeRemaining === 0) {
             clearInterval(timerInterval);
             Score();
         }
     }, 1000);
-    quizBody.style.display = "block";
+    EntireQuiz.style.display = "block";
 }
 //keeps track of score when time runs out
 function Score() {
-    quizBody.style.display = "none"
-    gameoverDiv.style.display = "flex";
+    EntireQuiz.style.display = "none"
+    gameOver.style.display = "flex";
     clearInterval(timerInterval);
     highscoreInputName.value = "";
     finalScoreEl.innerHTML = "You got " + score + " out of " + questions.length + " correct!";
@@ -115,8 +113,8 @@ submitScoreBtn.addEventListener("click", function highscore() {
             score: score
         };
 
-        gameoverDiv.style.display = "none";
-        highscoreContainer.style.display = "flex";
+        gameOver.style.display = "none";
+        hsCon.style.display = "flex";
         highscoreDiv.style.display = "block";
         endGameBtns.style.display = "flex";
         savedHighscores.push(currentHighscore);
@@ -142,9 +140,8 @@ function generateHighscores() {
 
 // This function displays the high scores page while hiding all of the other pages from 
 function showHS() {
-    startquiz.style.display = "none"
-    gameoverDiv.style.display = "none";
-    highscoreContainer.style.display = "flex";
+    gameOver.style.display = "none";
+    hsCon.style.display = "flex";
     highscoreDiv.style.display = "block";
     endGameBtns.style.display = "flex";
     generateHighscores();
@@ -159,9 +156,8 @@ function clearhs() {
 
 //allows to replay
 function replay() {
-    highscoreContainer.style.display = "none";
-    gameoverDiv.style.display = "none";
-    startquiz.style.display = "flex";
+    hsCon.style.display = "none";
+    gameOver.style.display = "none";
     timeRemaining = 76;
     score = 0;
     currentQuestionIndex = 0;
@@ -171,12 +167,12 @@ function check(answer) { //checks each answer
     correct = questions[currentQuestionIndex].correctAnswer;
     if (answer === correct && currentQuestionIndex !== finalQuestionIndex) {
         score++;
-        alert("That Is Correct!");
+        alert("Correct!");
         currentQuestionIndex++;
         generateQuizQuestion();
 
     } else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex) {
-        alert("That Is Incorrect.")
+        alert("Incorrect.")
         currentQuestionIndex++;
         generateQuizQuestion();
     } else {
